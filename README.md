@@ -7,9 +7,10 @@
       <img alt="GitHub top language" src="https://img.shields.io/github/languages/top/gisabernardess/books-list">
       <img alt="GitHub repo size" src="https://img.shields.io/github/repo-size/gisabernardess/books-list">
       <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/gisabernardess/books-list">
+      <img alt="Github license" src="https://img.shields.io/github/license/gisabernardess/books-list">
     </p>
     <h2>:speech_balloon: Intro </h2>
-    <p>Simple app for managing a list of books</p>
+    <p>Simple app for managing a list of books.</p>
     <h2>:rocket: Technologies </h2>
     <p>This project was developed with the following technologies:</p>
     <ul>
@@ -34,7 +35,7 @@ $ yarn start <br/>
 <span class="pl-c"><span class="pl-c">#</span> The app will automatically reload if you change any of the source files.</span></pre>
 </div>
     <h2>:pencil:</a> License </h2>
-    <p>This project is under the MIT license. See the <a href="https://github.com/gisabernardess/react-api/blob/main/LICENSE" rel="nofollow">LICENSE</a> for more information.</p>
+    <p>This project is under the MIT license. See the <a href="https://github.com/gisabernardess/books-list/blob/main/LICENSE" rel="nofollow">LICENSE</a> for more information.</p>
     <hr>
     <p>Made with ♥ by Gisele Silva :wave: <a href="https://www.linkedin.com/in/gisabernardess/" rel="nofollow">Get in touch!</a></p>
   </article>
