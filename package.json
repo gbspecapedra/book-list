@@ -1,0 +1,11 @@
+{
+  "name": "books-list",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "workspaces": {
+    "packages": ["web/*"]
+  },
+  "author": "Gisele Bernardes da Silva <giiselebernardes@gmail.com>",
+  "license": "MIT"
+}
