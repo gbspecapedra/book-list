@@ -10,13 +10,9 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
-    "@typescript-eslint/eslint-plugin": "^4.4.0",
+
     "axios": "^0.20.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-plugin-import": "^2.21.2",
-    "eslint-plugin-jsx-a11y": "^6.3.0",
-    "eslint-plugin-react": "^7.20.0",
-    "eslint-plugin-react-hooks": "^4",
+
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.3",
@@ -41,10 +37,16 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^7.11.0",
+    "@typescript-eslint/eslint-plugin": "^4.4.0",
+    "eslint": "^6.6.0",
     "eslint-config-prettier": "^6.12.0",
     "eslint-import-resolver-typescript": "^2.3.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.0",
+    "eslint-plugin-react": "^7.20.0",
+    "eslint-plugin-react-hooks": "^4",
     "prettier": "^2.1.2"
   }
 }
