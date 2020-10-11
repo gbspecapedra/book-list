@@ -15,17 +15,18 @@
     <p>This project was developed with the following technologies:</p>
     <ul>
       <li><a href="https://reactjs.org/" rel="nofollow">ReactJS</a></li>
+      <li><a href="https://react.semantic-ui.com/" rel="nofollow">Semantic UI React</a></li>
       <li><a href="https://code.visualstudio.com/" rel="nofollow">VS Code</a> with <a
           href="https://eslint.org/" rel="nofollow">ESLint</a>
-        + <a href="https://prettier.io/" rel="nofollow">Prettier</a> 
+        + <a href="https://prettier.io/" rel="nofollow">Prettier</a>
         + <a href="https://editorconfig.org/" rel="nofollow">EditorConfig</a></li>
     </ul>
     <h2>:information_source:</a> How To Use </h2>
     <p>To clone and run this application, you'll need <a href="https://git-scm.com" rel="nofollow">Git</a> and  <a href="https://legacy.yarnpkg.com" rel="nofollow">Yarn</a>. From your command line:</p>
     <div class="highlight highlight-source-shell">
-      <pre><span class="pl-c"><span class="pl-c">#</span> Clone this repository</span> 
+      <pre><span class="pl-c"><span class="pl-c">#</span> Clone this repository</span>
 $ git clone https://github.com/gisabernardess/books-list <br/>
-<span class="pl-c"><span class="pl-c">#</span> Go into the repository</span> 
+<span class="pl-c"><span class="pl-c">#</span> Go into the repository</span>
 $ <span class="pl-c1">cd</span> books-list/web <br/>
 <span class="pl-c"><span class="pl-c">#</span> Install dependencies</span>
 $ yarn <br/>

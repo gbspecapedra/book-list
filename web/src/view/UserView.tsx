@@ -1,11 +1,11 @@
 import React from 'react';
 import { PageBody, PageTitle } from '../components/layout';
 
-export const DashboardView = () => {
+export const UserView = () => {
   return (
     <>
-      <PageTitle title="Home" />
-      <PageBody>Dashboard</PageBody>
+      <PageTitle title="My books" />
+      <PageBody>My books</PageBody>
     </>
   );
 };

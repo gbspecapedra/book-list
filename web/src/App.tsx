@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { Routes } from './routes';
+import { PageView } from './components/layout';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <Routes />
+      <PageView />
     </BrowserRouter>
   );
 };
