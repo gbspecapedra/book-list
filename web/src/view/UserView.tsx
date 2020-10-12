@@ -1,5 +1,5 @@
 import React from 'react';
-import { Checkbox, Icon, Segment, Table } from 'semantic-ui-react';
+import { Checkbox, Icon, Popup, Segment, Table } from 'semantic-ui-react';
 import { PageBody, PageTitle } from '../components/layout';
 import { Button } from '../components/style';
 
@@ -54,9 +54,15 @@ export const UserView = () => {
               <Table.Row textAlign="right">
                 <Table.HeaderCell />
                 <Table.HeaderCell colSpan="4">
-                  <Button color="green">
-                    <Icon name="plus" fitted />
-                  </Button>
+                  <Popup
+                    position="bottom right"
+                    content="Add a book"
+                    trigger={
+                      <Button color="green">
+                        <Icon name="plus" fitted />
+                      </Button>
+                    }
+                  />
                 </Table.HeaderCell>
               </Table.Row>
             </Table.Footer>
