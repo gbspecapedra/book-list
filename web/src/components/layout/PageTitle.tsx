@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Header } from 'semantic-ui-react';
+import { Container, Header, Segment } from 'semantic-ui-react';
 
 interface PageTitleProps {
   title: string;
@@ -8,14 +8,15 @@ interface PageTitleProps {
 export const PageTitle = (props: PageTitleProps) => {
   return (
     <Container fluid textAlign="right">
-      <div
+      <Segment
+        basic
         style={{
           padding: '1rem',
           flexGrow: 1,
         }}
       >
         <Header as="h1">{props.title}</Header>
-      </div>
+      </Segment>
     </Container>
   );
 };

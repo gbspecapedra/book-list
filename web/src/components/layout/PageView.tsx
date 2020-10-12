@@ -1,16 +1,18 @@
 import React from 'react';
-import { Footer, Navbar, PageLayout } from '.';
+import { Segment } from 'semantic-ui-react';
+import { Footer, Navbar } from '.';
 import { Routes } from '../../routes';
+import { Wrapper } from '../style';
 
 export const PageView = () => {
   return (
     <>
-      <div style={{ display: 'flex', minHeight: '90vh' }}>
+      <Segment basic style={{ display: 'flex', minHeight: '90vh' }}>
         <Navbar />
-        <PageLayout>
+        <Wrapper>
           <Routes />
-        </PageLayout>
-      </div>
+        </Wrapper>
+      </Segment>
       <Footer />
     </>
   );

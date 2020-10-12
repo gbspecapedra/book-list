@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container } from 'semantic-ui-react';
+import { Container, Segment } from 'semantic-ui-react';
 
 interface PageBodyProps {
   children: React.ReactNode;
@@ -8,15 +8,16 @@ interface PageBodyProps {
 export const PageBody = (props: PageBodyProps) => {
   return (
     <Container textAlign="center">
-      <div
+      <Segment
+        basic
         style={{
-          border: '1px solid orange',
           padding: '1rem 0',
+          margin: 'auto',
           flexGrow: 1,
         }}
       >
         {props.children}
-      </div>
+      </Segment>
     </Container>
   );
 };

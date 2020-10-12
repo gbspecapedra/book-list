@@ -1,11 +1,11 @@
 import React from 'react';
 import { Container, Icon } from 'semantic-ui-react';
-import { Wrapper } from '../Wrapper';
+import { Wrapper } from '../style';
 
 export const Footer = () => {
   return (
     <Container fluid textAlign="center">
-      <Wrapper>
+      <Wrapper footer>
         <div style={{ flexDirection: 'column' }}>
           <div>
             Made with <Icon name="heart" color="red" size="small" fitted /> by

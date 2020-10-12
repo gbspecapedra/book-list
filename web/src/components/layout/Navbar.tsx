@@ -12,7 +12,7 @@ export const Navbar = () => {
   };
 
   return (
-    <Menu icon="labeled" fixed="left" vertical>
+    <Menu icon="labeled" fixed="left" vertical color="violet">
       <Menu.Item
         name="home"
         active={activeItem === 'home'}
