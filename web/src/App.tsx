@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import { PageView } from './components/layout';
+import { PageView } from './components';
 
 const App = () => {
   return (

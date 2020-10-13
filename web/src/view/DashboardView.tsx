@@ -1,10 +1,46 @@
-import React from 'react';
-import { Image, Header, Segment } from 'semantic-ui-react';
-import logo from '../assets/img/reading.svg';
-import { PageBody, PageTitle } from '../components/layout';
-import { Button } from '../components/style';
+import React, { useEffect, useMemo, useState } from 'react';
+import { Image, Header, Segment, Button, Label } from 'semantic-ui-react';
+import logo from '../assets/images/reading.svg';
+import { PageBody, PageTitle } from '../components';
+import { usePrinter } from '../components/report/usePrinter';
+import { Book } from '../util/model';
+import { ImpressaoAnnualReport } from './ImpressaoAnnualReport';
 
 export const DashboardView = () => {
+  const [myBooks, setMyBooks] = useState<Book[]>([]);
+  const { printPDF } = usePrinter();
+
+  useEffect(() => {
+    const bookStorage = localStorage.getItem('bookStorage');
+    if (bookStorage) {
+      setMyBooks(JSON.parse(bookStorage));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('bookStorage', JSON.stringify(myBooks));
+  }, [myBooks]);
+
+  const { totalRead, totalToRead } = useMemo(() => {
+    const totalRead = myBooks.reduce(
+      (counter, book) => (book.read ? counter + 1 : 0),
+      0,
+    );
+    const totalToRead = myBooks.reduce(
+      (counter, book) => (!book.read ? counter + 1 : 0),
+      0,
+    );
+    return {
+      totalRead,
+      totalToRead,
+    };
+  }, [myBooks]);
+
+  const handlePrinter = () => {
+    const docBody = ImpressaoAnnualReport(myBooks);
+    printPDF({ docBody });
+  };
+
   return (
     <>
       <PageTitle title="Home" />
@@ -31,12 +67,18 @@ export const DashboardView = () => {
         </Segment>
         <Segment basic style={{ marginTop: '4rem' }}>
           <Segment.Group horizontal style={{ border: 0, boxShadow: 'none' }}>
-            <Segment>Total books read: 0</Segment>
-            <Segment>Total books to read: 0</Segment>
+            <Segment>
+              Total books read: <Label color="violet">{totalRead}</Label>
+            </Segment>
+            <Segment>
+              Total books to read: <Label color="violet">{totalToRead}</Label>
+            </Segment>
           </Segment.Group>
 
           <Segment basic>
-            <Button>Get your annual report</Button>
+            <Button color="violet" onClick={handlePrinter}>
+              Get your report
+            </Button>
           </Segment>
         </Segment>
       </PageBody>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Container, Icon } from 'semantic-ui-react';
-import { Wrapper } from '../style';
+import { Wrapper } from '../styles';
 
 export const Footer = () => {
   return (

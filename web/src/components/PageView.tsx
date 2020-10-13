@@ -1,8 +1,8 @@
 import React from 'react';
 import { Segment } from 'semantic-ui-react';
 import { Footer, Navbar } from '.';
-import { Routes } from '../../routes';
-import { Wrapper } from '../style';
+import { Routes } from '../routes';
+import { Wrapper } from '../styles';
 
 export const PageView = () => {
   return (

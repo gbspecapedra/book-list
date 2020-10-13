@@ -17,6 +17,9 @@ export const Button = styled('button')(
     textTransform: 'none',
     textShadow: 'none',
     userSelect: 'none',
+    '&:focus': {
+      outline: 0,
+    },
   },
   (props: ButtonProps) => ({
     backgroundColor: `${props.color ?? '#6435c9'}`,

@@ -1,9 +1,34 @@
-import React from 'react';
-import { Checkbox, Icon, Popup, Segment, Table } from 'semantic-ui-react';
-import { PageBody, PageTitle } from '../components/layout';
-import { Button } from '../components/style';
+import React, { FormEvent, useEffect, useState } from 'react';
+import { Checkbox, Popup, Segment, Table, Image } from 'semantic-ui-react';
+import { ModalButton, PageBody, PageTitle } from '../components';
+import { Book } from '../util/model';
 
 export const UserView = () => {
+  const [myBooks, setMyBooks] = useState<Book[]>([]);
+
+  useEffect(() => {
+    const bookStorage = localStorage.getItem('bookStorage');
+    if (bookStorage) {
+      setMyBooks(JSON.parse(bookStorage));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('bookStorage', JSON.stringify(myBooks));
+  }, [myBooks]);
+
+  const handleCheckbox = (e: FormEvent, { checked }, id: string) => {
+    e.preventDefault();
+    const changed = myBooks.map(book => {
+      if (book.id === id) {
+        book.read = checked;
+        book.read_date = new Date();
+      }
+      return book;
+    });
+    setMyBooks(changed);
+  };
+
   return (
     <>
       <PageTitle title="My books" />
@@ -13,55 +38,48 @@ export const UserView = () => {
             <Table.Header fullWidth>
               <Table.Row>
                 <Table.HeaderCell />
-                <Table.HeaderCell>Name</Table.HeaderCell>
-                <Table.HeaderCell>Registration Date</Table.HeaderCell>
-                <Table.HeaderCell>E-mail address</Table.HeaderCell>
-                <Table.HeaderCell>Premium Plan</Table.HeaderCell>
+                <Table.HeaderCell />
+                <Table.HeaderCell>Title</Table.HeaderCell>
+                <Table.HeaderCell>Authors</Table.HeaderCell>
+                <Table.HeaderCell>Notes</Table.HeaderCell>
+                <Table.HeaderCell>Publish</Table.HeaderCell>
+                <Table.HeaderCell>Pages</Table.HeaderCell>
               </Table.Row>
             </Table.Header>
 
             <Table.Body>
-              <Table.Row>
-                <Table.Cell collapsing>
-                  <Checkbox />
-                </Table.Cell>
-                <Table.Cell>John Lilki</Table.Cell>
-                <Table.Cell>September 14, 2013</Table.Cell>
-                <Table.Cell>jhlilk22@yahoo.com</Table.Cell>
-                <Table.Cell>No</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell collapsing>
-                  <Checkbox />
-                </Table.Cell>
-                <Table.Cell>Jamie Harington</Table.Cell>
-                <Table.Cell>January 11, 2014</Table.Cell>
-                <Table.Cell>jamieharingonton@yahoo.com</Table.Cell>
-                <Table.Cell>Yes</Table.Cell>
-              </Table.Row>
-              <Table.Row>
-                <Table.Cell collapsing>
-                  <Checkbox />
-                </Table.Cell>
-                <Table.Cell>Jill Lewis</Table.Cell>
-                <Table.Cell>May 11, 2014</Table.Cell>
-                <Table.Cell>jilsewris22@yahoo.com</Table.Cell>
-                <Table.Cell>Yes</Table.Cell>
-              </Table.Row>
+              {myBooks?.map(book => (
+                <Table.Row key={book.id}>
+                  <Table.Cell collapsing>
+                    <Checkbox
+                      checked={book?.read}
+                      onClick={(event, { checked }) =>
+                        handleCheckbox(event, { checked }, book.id)
+                      }
+                    />
+                  </Table.Cell>
+                  <Table.Cell>
+                    <Image src={book.cover?.small} />
+                  </Table.Cell>
+                  <Table.Cell>{book?.title}</Table.Cell>
+                  <Table.Cell>
+                    {book.authors?.map(author => author.name)}
+                  </Table.Cell>
+                  <Table.Cell>{book.notes}</Table.Cell>
+                  <Table.Cell>{book.publish_date}</Table.Cell>
+                  <Table.Cell>{book.number_of_pages}</Table.Cell>
+                </Table.Row>
+              ))}
             </Table.Body>
 
             <Table.Footer fullWidth>
               <Table.Row textAlign="right">
                 <Table.HeaderCell />
-                <Table.HeaderCell colSpan="4">
+                <Table.HeaderCell colSpan="6">
                   <Popup
                     position="bottom right"
                     content="Add a book"
-                    trigger={
-                      <Button color="green">
-                        <Icon name="plus" fitted />
-                      </Button>
-                    }
+                    trigger={<ModalButton books={myBooks} />}
                   />
                 </Table.HeaderCell>
               </Table.Row>

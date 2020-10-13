@@ -3,19 +3,19 @@ import { useHistory } from 'react-router-dom';
 import { Icon, Menu } from 'semantic-ui-react';
 
 export const Navbar = () => {
-  const [activeItem, setActiveItem] = useState('home');
   const history = useHistory();
+  const [activeItem, setActiveItem] = useState(history.location.pathname);
 
   const handleItemClick = (_, { name }) => {
     setActiveItem(name);
-    history.push(`/${name}`);
+    history.push(name);
   };
 
   return (
     <Menu icon="labeled" fixed="left" vertical color="violet">
       <Menu.Item
-        name="home"
-        active={activeItem === 'home'}
+        name="/home"
+        active={activeItem === '/home'}
         onClick={handleItemClick}
       >
         <Icon name="home" />
@@ -23,8 +23,8 @@ export const Navbar = () => {
       </Menu.Item>
 
       <Menu.Item
-        name="user"
-        active={activeItem === 'user'}
+        name="/user"
+        active={activeItem === '/user'}
         onClick={handleItemClick}
       >
         <Icon name="user" />
@@ -32,8 +32,8 @@ export const Navbar = () => {
       </Menu.Item>
 
       <Menu.Item
-        name="library"
-        active={activeItem === 'library'}
+        name="/library"
+        active={activeItem === '/library'}
         onClick={handleItemClick}
       >
         <Icon name="book" />
