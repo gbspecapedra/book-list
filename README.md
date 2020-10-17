@@ -1,6 +1,6 @@
 <div id="readme" class="Box-body readme blob js-code-block-container">
   <article class="markdown-body entry-content p-3 p-md-6" itemprop="text">
-    <p align="center"><img alt="reading" src="https://github.com/gisabernardess/book-list/blob/main/.github/reading.svg"></p>
+    <p align="center"><img alt="reading" src="https://github.com/gisabernardess/book-list/blob/main/.github/reading.svg" width="250px"></p>
     <p align="center">Manage your book list</p>
     <p align="center">
       <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/gisabernardess/books-list">
