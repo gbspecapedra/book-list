@@ -1,6 +1,6 @@
 <div id="readme" class="Box-body readme blob js-code-block-container">
   <article class="markdown-body entry-content p-3 p-md-6" itemprop="text">
-    <h2 align="center">Maniac List of Books</h2>
+    <p align="center"><img alt="reading" src="https://github.com/gisabernardess/book-list/blob/main/.github/reading.svg" width="250px"></p>
     <h2>:rocket: Technologies </h2>
     <p>Client-side was developed with the following technologies:</p>
     <ul>
